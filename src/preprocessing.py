@@ -10,7 +10,7 @@ def process_text(text):
         return ""
     return " ".join([ps.stem(word) for word in text.split()])
 
-def load_data(path='data/movies-final.csv', n_samples=1000):
+def load_data(path='data/movies-final.csv', n_samples=5000):
     movies = pd.read_csv(path)
     movies_subset = movies[['id', 'title', 'overview']].copy()
     sample_movies = movies_subset.head(n_samples)
